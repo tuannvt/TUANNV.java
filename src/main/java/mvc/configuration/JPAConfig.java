@@ -28,7 +28,7 @@ public class JPAConfig {
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/Day12?characterEncoding=UTF-8");
+        dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/Day14?characterEncoding=UTF-8");
         dataSource.setUsername("root");
         dataSource.setPassword("");
         return dataSource;

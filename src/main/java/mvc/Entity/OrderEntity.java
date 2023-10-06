@@ -11,22 +11,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "order")
-public class OderEntity {
+@Table(name = "orders")
+public class OrderEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private int id;
   @Column(name = "orderDate")
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   private LocalDate orderDate;
   @Column(name = "customerName")
   private String customerName;
-  @OneToMany(mappedBy = "order",fetch = FetchType.EAGER)
+  @OneToMany(mappedBy = "orders",fetch = FetchType.EAGER)
   private List<OrderDetailEntity> orderDetailEntityList=new ArrayList<>();
 
-  public OderEntity() {
+  public OrderEntity() {
   }
 
   public int getId() {
